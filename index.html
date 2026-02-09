@@ -275,11 +275,12 @@
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;" id="calc-inputs">
       <div>
         <label style="display:block; font-size:0.85rem; color:#94a3b8; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Your Trade</label>
-        <select id="calc-trade" onchange="updateCalculator()" style="width:100%; padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; cursor:pointer;">
-          <option value="hvac">HVAC / Air Conditioning</option>
-          <option value="roofing">Roofing</option>
-          <option value="plumbing">Plumbing</option>
-          <option value="electrical">Electrical</option>
+        <select id="calc-trade" onchange="updateCalculator()" style="width:100%; padding:14px 16px; background:#1a2d4d; border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; cursor:pointer;">
+          <option value="hvac" style="background:#1a2d4d; color:#fff;">HVAC / Air Conditioning</option>
+          <option value="roofing" style="background:#1a2d4d; color:#fff;">Roofing</option>
+          <option value="plumbing" style="background:#1a2d4d; color:#fff;">Plumbing</option>
+          <option value="electrical" style="background:#1a2d4d; color:#fff;">Electrical</option>
+          <option value="other" style="background:#1a2d4d; color:#fff;">Other</option>
         </select>
       </div>
       <div>
@@ -336,7 +337,7 @@
 </section>
 
 <script>
-const tradeDefaults={hvac:{jobValue:12000,meetings:8,closeRate:.28},roofing:{jobValue:25000,meetings:7,closeRate:.25},plumbing:{jobValue:8000,meetings:9,closeRate:.30},electrical:{jobValue:15000,meetings:7,closeRate:.27}};
+const tradeDefaults={hvac:{jobValue:12000,meetings:8,closeRate:.28},roofing:{jobValue:25000,meetings:7,closeRate:.25},plumbing:{jobValue:8000,meetings:9,closeRate:.30},electrical:{jobValue:15000,meetings:7,closeRate:.27},other:{jobValue:10000,meetings:8,closeRate:.25}};
 function updateCalculator(){const t=document.getElementById('calc-trade').value,j=parseInt(document.getElementById('calc-jobvalue').value)||tradeDefaults[t].jobValue,d=tradeDefaults[t],m=d.meetings,c=Math.round(m*d.closeRate*10)/10,mn=Math.floor(c),mx=Math.ceil(c+.5),r=Math.round(c*j),inv=1500,roi=Math.round((r-inv)/inv*100),bm=Math.round(j/inv);document.getElementById('calc-meetings').textContent=m;document.getElementById('calc-clients').textContent=mn+'-'+mx;document.getElementById('calc-roi').textContent=roi.toLocaleString()+'%';document.getElementById('calc-revenue').textContent='$'+r.toLocaleString();document.getElementById('calc-breakeven').textContent=bm>=2?'Close just 1 job and you\'ve paid for '+bm+' months':'Every closed deal returns '+Math.round(j/inv)+'x your investment';const h=t==='roofing'?'75-100':t==='hvac'?'50-85':t==='plumbing'?'40-75':'45-80',hm=t==='roofing'?'$4,000–$8,000':'$3,000–$6,000';document.getElementById('calc-comparison').innerHTML='You\'d spend '+hm+'/month on HomeAdvisor for shared leads at $'+h+' each. With us, every lead is exclusively yours at a fraction of the cost.'}
 document.getElementById('calc-trade').addEventListener('change',function(){document.getElementById('calc-jobvalue').value=tradeDefaults[this.value].jobValue;updateCalculator()});
 updateCalculator();
@@ -475,11 +476,11 @@ if(window.innerWidth<640){document.getElementById('calc-inputs').style.gridTempl
         <select name="trade" required
           style="padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; font-family:'Inter',sans-serif; -webkit-appearance:none; appearance:none;">
           <option value="" disabled selected style="color:#94A3B8;">Your Trade</option>
-          <option value="hvac" style="background:#1B2B4B;">HVAC</option>
-          <option value="plumbing" style="background:#1B2B4B;">Plumbing</option>
-          <option value="roofing" style="background:#1B2B4B;">Roofing</option>
-          <option value="electrical" style="background:#1B2B4B;">Electrical</option>
-          <option value="other" style="background:#1B2B4B;">Other</option>
+          <option value="hvac" style="background:#1B2B4B; color:#fff;">HVAC</option>
+          <option value="plumbing" style="background:#1B2B4B; color:#fff;">Plumbing</option>
+          <option value="roofing" style="background:#1B2B4B; color:#fff;">Roofing</option>
+          <option value="electrical" style="background:#1B2B4B; color:#fff;">Electrical</option>
+          <option value="other" style="background:#1B2B4B; color:#fff;">Other</option>
         </select>
         <!-- FormSubmit.co configuration -->
         <input type="hidden" name="_subject" value="🔥 New Lead — Citadel Solutions Strategy Call Request">
@@ -528,6 +529,9 @@ if(window.innerWidth<640){
       <a href="/plumbing-lead-generation.html">Plumbing Leads</a>
       <a href="/roofing-lead-generation.html">Roofing Leads</a>
       <a href="/electrical-lead-generation.html">Electrical Leads</a>
+      <a href="/houston-lead-generation.html">Houston</a>
+      <a href="/dallas-lead-generation.html">Dallas/FW</a>
+      <a href="/phoenix-lead-generation.html">Phoenix</a>
       <a href="/blog.html">Blog</a>
       <a href="tel:+16193248727">(619) 324-8727</a>
       <a href="mailto:beau@citadel-solutions.org">beau@citadel-solutions.org</a>
