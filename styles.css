@@ -1,0 +1,429 @@
+/* Citadel Solutions — Landing Page */
+:root {
+  --navy: #1B2B4B;
+  --gold: #D4952A;
+  --gold-light: #E8B86D;
+  --white: #FFFFFF;
+  --off-white: #F8F9FA;
+  --gray: #6B7280;
+  --dark-gray: #374151;
+  --light-gray: #E5E7EB;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--dark-gray);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── NAV ─── */
+nav {
+  background: var(--navy);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+nav .logo img {
+  height: 40px;
+  width: auto;
+}
+
+nav .logo span {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+nav .cta-nav {
+  background: var(--gold);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+nav .cta-nav:hover { background: var(--gold-light); }
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 80px 0 100px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 .gold { color: var(--gold); }
+
+.hero .subtitle {
+  font-size: 1.2rem;
+  color: #94A3B8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  line-height: 1.5;
+}
+
+.cta-button {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 149, 42, 0.3);
+}
+
+.hero .trust-line {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #64748B;
+}
+
+/* ─── SECTIONS ─── */
+section { padding: 80px 0; }
+section:nth-child(even) { background: var(--off-white); }
+
+.section-label {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.section-sub {
+  font-size: 1.1rem;
+  color: var(--gray);
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+/* ─── PROBLEM ─── */
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.problem-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.problem-card .icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.problem-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.problem-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* ─── STEPS ─── */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  counter-reset: step;
+}
+
+.step {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.step-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.step p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* ─── STATS ─── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.stat {
+  padding: 32px 16px;
+}
+
+.stat .number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat .label {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* ─── ROI ─── */
+.roi-box {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 16px;
+  padding: 48px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.roi-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.roi-math {
+  font-size: 1.1rem;
+  line-height: 2;
+  margin-bottom: 24px;
+}
+
+.roi-math .highlight {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+/* ─── TRADES ─── */
+.trades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.trade-card {
+  background: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 12px;
+  padding: 32px 24px;
+}
+
+.trade-card .icon { font-size: 2.5rem; margin-bottom: 16px; }
+.trade-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+
+/* ─── PRICING ─── */
+.pricing-card {
+  background: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pricing-card .badge {
+  background: var(--gold);
+  color: var(--white);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pricing-card .price {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.pricing-card .price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.pricing-card .includes {
+  list-style: none;
+  text-align: left;
+  margin: 32px 0;
+}
+
+.pricing-card .includes li {
+  padding: 8px 0;
+  color: var(--dark-gray);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-card .includes li::before {
+  content: '✓';
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* ─── FAQ ─── */
+.faq-list { max-width: 700px; margin: 0 auto; }
+
+.faq-item {
+  border-bottom: 1px solid var(--light-gray);
+  padding: 24px 0;
+}
+
+.faq-item summary {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.2s;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  margin-top: 12px;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ─── FINAL CTA ─── */
+.final-cta {
+  background: var(--navy);
+  color: var(--white);
+  text-align: center;
+  padding: 80px 0;
+}
+
+.final-cta h2 { color: var(--white); margin-bottom: 16px; }
+.final-cta p { color: #94A3B8; margin-bottom: 32px; font-size: 1.1rem; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: #111827;
+  color: #64748B;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+footer a { color: #94A3B8; text-decoration: none; }
+footer a:hover { color: var(--white); }
+
+footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .hero { padding: 60px 0 80px; }
+  section { padding: 60px 0; }
+  .roi-box { padding: 32px 24px; }
+  .pricing-card { padding: 32px 24px; }
+  nav .logo span { display: none; }
+}
