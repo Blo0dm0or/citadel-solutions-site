@@ -135,11 +135,21 @@
       <span style="color:#1B2B4B;">Citadel Solutions</span>
     </a>
     <div style="display:flex; align-items:center; gap:24px;">
+      <div style="position:relative;" class="nav-dropdown">
+        <a href="#" style="color:#6B7280; text-decoration:none; font-weight:600; font-size:0.9rem;" onclick="this.parentElement.classList.toggle('open');return false;">Services ▾</a>
+        <div style="display:none; position:absolute; top:100%; left:0; background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.15); padding:8px 0; min-width:220px; z-index:100;">
+          <a href="/hvac-lead-generation.html" style="display:block; padding:8px 16px; color:#374151; text-decoration:none; font-size:0.9rem;">❄️ HVAC Leads</a>
+          <a href="/plumbing-lead-generation.html" style="display:block; padding:8px 16px; color:#374151; text-decoration:none; font-size:0.9rem;">🔧 Plumbing Leads</a>
+          <a href="/roofing-lead-generation.html" style="display:block; padding:8px 16px; color:#374151; text-decoration:none; font-size:0.9rem;">🏠 Roofing Leads</a>
+          <a href="/electrical-lead-generation.html" style="display:block; padding:8px 16px; color:#374151; text-decoration:none; font-size:0.9rem;">⚡ Electrical Leads</a>
+        </div>
+      </div>
       <a href="/blog-contractor-lead-generation.html" style="color:#6B7280; text-decoration:none; font-weight:600; font-size:0.9rem;">Blog</a>
       <a href="mailto:beau@citadel-solutions.org?subject=Interested%20in%20Citadel%20Solutions" class="cta-nav">Get Started</a>
     </div>
   </div>
 </nav>
+<style>.nav-dropdown.open > div:last-child { display:block!important; } .nav-dropdown > div:last-child a:hover { background:#F3F4F6; }</style>
 
 <!-- HERO -->
 <section class="hero" style="background:#1B2B4B; color:#FFFFFF; padding:80px 0 100px;">
