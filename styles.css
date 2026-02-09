@@ -427,4 +427,19 @@ footer .footer-links {
   .roi-box { padding: 32px 24px; }
   .pricing-card { padding: 32px 24px; }
   nav .logo span { display: none; }
+  nav .logo img { height: 44px; }
+  nav .cta-nav { padding: 8px 16px; font-size: 0.85rem; }
+  body { font-size: 16px; }
+  .hero .subtitle { font-size: 1.05rem; }
+  .section-sub { font-size: 1rem; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .stat .number { font-size: 2.2rem; }
+  .stat .label { font-size: 0.85rem; }
+  .cta-button { padding: 14px 28px; font-size: 1rem; width: 100%; text-align: center; }
+  .steps { gap: 16px; }
+  .problems-grid { gap: 16px; }
+  .problem-card { padding: 24px; }
+  .trades-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .trade-card { padding: 24px 16px; }
+  footer .footer-links { flex-direction: column; gap: 12px; }
 }
