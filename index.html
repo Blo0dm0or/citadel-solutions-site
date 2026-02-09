@@ -139,24 +139,83 @@
   </div>
 </section>
 
-<!-- ROI -->
-<section>
-  <div class="container">
-    <div class="roi-box">
-      <h3>Let's Do the Math on One Month.</h3>
-      <div class="roi-math">
-        We book you <strong>10 estimates</strong> this month<br>
-        You close <strong>3 of them</strong> (30% close rate — conservative)<br>
-        Your average job is <strong>$5,000</strong><br><br>
-        3 jobs × $5,000 = <span class="highlight">$15,000 in revenue</span><br>
-        Your investment? <strong>$1,500</strong><br><br>
-        <span class="highlight">That's a 10x return. And that's the low end.</span>
+<!-- ROI CALCULATOR -->
+<section id="roi-calculator" style="background:linear-gradient(135deg, #0a1628 0%, #1a2d4d 100%); padding:80px 20px; color:#fff;">
+  <div style="max-width:800px; margin:0 auto;">
+    <p class="section-label" style="color:#C5922A;">The Math</p>
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:0.5rem; color:#fff;">See Your ROI in 30 Seconds</h2>
+    <p style="text-align:center; color:#94a3b8; margin-bottom:40px; font-size:1.1rem;">Pick your trade and average job size. We'll show you the numbers.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;" id="calc-inputs">
+      <div>
+        <label style="display:block; font-size:0.85rem; color:#94a3b8; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Your Trade</label>
+        <select id="calc-trade" onchange="updateCalculator()" style="width:100%; padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; cursor:pointer;">
+          <option value="hvac">HVAC / Air Conditioning</option>
+          <option value="roofing">Roofing</option>
+          <option value="plumbing">Plumbing</option>
+          <option value="electrical">Electrical</option>
+        </select>
       </div>
-      <p style="color:#94A3B8; margin-bottom:24px; font-size:0.95rem;">Even if you close ONE job from our leads, you've already paid for the service and then some.</p>
-      <a href="https://calendly.com/beaubrothers" class="cta-button">Let's Run Your Numbers →</a>
+      <div>
+        <label style="display:block; font-size:0.85rem; color:#94a3b8; margin-bottom:8px; text-transform:uppercase; letter-spacing:1px;">Average Job Value</label>
+        <div style="position:relative;">
+          <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); color:#C5922A; font-size:1rem;">$</span>
+          <input type="number" id="calc-jobvalue" value="12000" min="1000" max="200000" step="500" onchange="updateCalculator()" oninput="updateCalculator()" style="width:100%; padding:14px 16px 14px 32px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; box-sizing:border-box;">
+        </div>
+      </div>
+    </div>
+
+    <div id="calc-results" style="background:rgba(255,255,255,0.05); border:1px solid rgba(197,146,42,0.2); border-radius:12px; padding:32px; margin-bottom:32px;">
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; text-align:center; margin-bottom:24px;" id="calc-stats-grid">
+        <div>
+          <div id="calc-meetings" style="font-size:2.5rem; font-weight:700; color:#C5922A;">8</div>
+          <div style="font-size:0.85rem; color:#94a3b8;">Meetings / Month</div>
+        </div>
+        <div>
+          <div id="calc-clients" style="font-size:2.5rem; font-weight:700; color:#C5922A;">2-3</div>
+          <div style="font-size:0.85rem; color:#94a3b8;">New Clients / Month</div>
+        </div>
+        <div>
+          <div id="calc-roi" style="font-size:2.5rem; font-weight:700; color:#22c55e;">1,500%</div>
+          <div style="font-size:0.85rem; color:#94a3b8;">Monthly ROI</div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.1); padding-top:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <span style="color:#94a3b8;">Estimated monthly revenue from new clients</span>
+          <span id="calc-revenue" style="font-size:1.25rem; font-weight:600; color:#fff;">$30,000</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <span style="color:#94a3b8;">Your monthly investment</span>
+          <span style="font-size:1.25rem; font-weight:600; color:#fff;">$1,500</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; padding-top:12px; border-top:1px solid rgba(197,146,42,0.3);">
+          <span style="color:#C5922A; font-weight:600;">Breakeven</span>
+          <span id="calc-breakeven" style="font-size:1.1rem; font-weight:700; color:#C5922A;">Close just 1 job and you've paid for 8 months</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:rgba(255,255,255,0.03); border-radius:8px; padding:20px 24px; margin-bottom:32px;">
+      <p style="font-size:0.9rem; color:#94a3b8; margin:0;">
+        <strong style="color:#C5922A;">vs. HomeAdvisor:</strong>
+        <span id="calc-comparison">You'd spend $3,000–$6,000/month for shared leads. With us, every lead is exclusively yours at half the cost.</span>
+      </p>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="#pricing" class="cta-button">Start Filling Your Pipeline →</a>
     </div>
   </div>
 </section>
+
+<script>
+const tradeDefaults={hvac:{jobValue:12000,meetings:8,closeRate:.28},roofing:{jobValue:25000,meetings:7,closeRate:.25},plumbing:{jobValue:8000,meetings:9,closeRate:.30},electrical:{jobValue:15000,meetings:7,closeRate:.27}};
+function updateCalculator(){const t=document.getElementById('calc-trade').value,j=parseInt(document.getElementById('calc-jobvalue').value)||tradeDefaults[t].jobValue,d=tradeDefaults[t],m=d.meetings,c=Math.round(m*d.closeRate*10)/10,mn=Math.floor(c),mx=Math.ceil(c+.5),r=Math.round(c*j),inv=1500,roi=Math.round((r-inv)/inv*100),bm=Math.round(j/inv);document.getElementById('calc-meetings').textContent=m;document.getElementById('calc-clients').textContent=mn+'-'+mx;document.getElementById('calc-roi').textContent=roi.toLocaleString()+'%';document.getElementById('calc-revenue').textContent='$'+r.toLocaleString();document.getElementById('calc-breakeven').textContent=bm>=2?'Close just 1 job and you\'ve paid for '+bm+' months':'Every closed deal returns '+Math.round(j/inv)+'x your investment';const h=t==='roofing'?'75-100':t==='hvac'?'50-85':t==='plumbing'?'40-75':'45-80',hm=t==='roofing'?'$4,000–$8,000':'$3,000–$6,000';document.getElementById('calc-comparison').innerHTML='You\'d spend '+hm+'/month on HomeAdvisor for shared leads at $'+h+' each. With us, every lead is exclusively yours at a fraction of the cost.'}
+document.getElementById('calc-trade').addEventListener('change',function(){document.getElementById('calc-jobvalue').value=tradeDefaults[this.value].jobValue;updateCalculator()});
+updateCalculator();
+if(window.innerWidth<640){document.getElementById('calc-inputs').style.gridTemplateColumns='1fr';document.getElementById('calc-stats-grid').style.gridTemplateColumns='1fr'}
+</script>
 
 <!-- WHO WE WORK WITH -->
 <section id="trades">
