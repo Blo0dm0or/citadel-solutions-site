@@ -5,6 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citadel Solutions — We Fill Your Calendar With Qualified Jobs</title>
   <meta name="description" content="Cold email lead generation for HVAC, roofing, plumbing, and electrical companies. 8-15 qualified meetings per month. No ad spend.">
+  <link rel="canonical" href="https://citadel-solutions.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://citadel-solutions.org/">
+  <meta property="og:title" content="Citadel Solutions — We Fill Your Calendar With Qualified Jobs">
+  <meta property="og:description" content="Cold email lead generation for HVAC, roofing, plumbing, and electrical contractors. 8-15 qualified meetings per month. No ad spend required.">
+  <meta property="og:image" content="https://citadel-solutions.org/assets/images/csg-logo-primary-transparent.png">
+  <meta property="og:site_name" content="Citadel Solutions">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Citadel Solutions — We Fill Your Calendar With Qualified Jobs">
+  <meta name="twitter:description" content="Cold email lead generation for HVAC, roofing, plumbing, and electrical contractors. 8-15 qualified meetings per month.">
+  <meta name="twitter:image" content="https://citadel-solutions.org/assets/images/csg-logo-primary-transparent.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Citadel Solutions",
+    "url": "https://citadel-solutions.org",
+    "logo": "https://citadel-solutions.org/assets/images/csg-logo-primary-transparent.png",
+    "description": "B2B cold email lead generation for HVAC, roofing, plumbing, and electrical contractors. We fill your calendar with qualified job estimates.",
+    "telephone": "+1-619-324-8727",
+    "email": "beau@citadel-solutions.org",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "19150 High Glen Road",
+      "addressLocality": "Alpine",
+      "addressRegion": "CA",
+      "postalCode": "91901",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {"@type": "City", "name": "Houston", "addressRegion": "TX"},
+      {"@type": "City", "name": "Dallas", "addressRegion": "TX"},
+      {"@type": "City", "name": "Fort Worth", "addressRegion": "TX"},
+      {"@type": "City", "name": "Phoenix", "addressRegion": "AZ"}
+    ],
+    "serviceType": ["Lead Generation", "Cold Email Marketing", "B2B Outreach", "Appointment Setting"],
+    "priceRange": "$1,500 - $4,000/mo",
+    "sameAs": []
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -332,11 +379,61 @@ if(window.innerWidth<640){document.getElementById('calc-inputs').style.gridTempl
   <div class="container">
     <h2>Your Competitors Are Booking Jobs Right Now. Are You?</h2>
     <p>Every day without a system is another day your calendar stays empty while someone else picks up the phone. We're asking for 15 minutes. No pitch. No pressure. If it's not a fit, we'll tell you.</p>
-    <a href="mailto:beau@citadel-solutions.org?subject=15-Minute%20Strategy%20Call&body=Hi%20Beau%2C%0A%0AI%27m%20interested%20in%20a%20free%20strategy%20call.%20What%20times%20work%20this%20week%3F%0A%0AThanks" class="cta-button">Request Your Free 15-Minute Strategy Call →</a>
-    <p style="margin-top:16px;"><a href="tel:+16193248727" style="color:#94A3B8; text-decoration:none; font-size:1.1rem;">Or call us directly: <strong style="color:#D4952A;">(619) 324-8727</strong></a></p>
+    
+    <!-- Lead Capture Form -->
+    <div id="contact-form-wrapper" style="max-width:520px; margin:40px auto 0; text-align:left;">
+      <form id="contact-form" action="https://formspree.io/f/placeholder" method="POST" style="display:grid; gap:16px;">
+        <input type="text" name="name" placeholder="Your Name" required
+          style="padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; font-family:'Inter',sans-serif;">
+        <input type="text" name="company" placeholder="Company Name" required
+          style="padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; font-family:'Inter',sans-serif;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <input type="email" name="email" placeholder="Email" required
+            style="padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; font-family:'Inter',sans-serif;">
+          <input type="tel" name="phone" placeholder="Phone (optional)"
+            style="padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; font-family:'Inter',sans-serif;">
+        </div>
+        <select name="trade" required
+          style="padding:14px 16px; background:rgba(255,255,255,0.08); border:1px solid rgba(197,146,42,0.3); border-radius:8px; color:#fff; font-size:1rem; font-family:'Inter',sans-serif; -webkit-appearance:none; appearance:none;">
+          <option value="" disabled selected style="color:#94A3B8;">Your Trade</option>
+          <option value="hvac" style="background:#1B2B4B;">HVAC</option>
+          <option value="plumbing" style="background:#1B2B4B;">Plumbing</option>
+          <option value="roofing" style="background:#1B2B4B;">Roofing</option>
+          <option value="electrical" style="background:#1B2B4B;">Electrical</option>
+          <option value="other" style="background:#1B2B4B;">Other</option>
+        </select>
+        <input type="hidden" name="_subject" value="🔥 New Lead — Citadel Solutions Strategy Call Request">
+        <input type="hidden" name="_next" value="https://citadel-solutions.org?submitted=true">
+        <button type="submit" class="cta-button" style="width:100%; text-align:center; border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:1.1rem;">
+          Request Your Free 15-Minute Strategy Call →
+        </button>
+      </form>
+      <div id="form-success" style="display:none; text-align:center; padding:30px 0;">
+        <p style="font-size:1.3rem; color:#C5922A; font-weight:700;">✓ Request Received!</p>
+        <p style="color:#CBD5E1; margin-top:8px;">We'll reach out within 24 hours to schedule your strategy call.</p>
+      </div>
+    </div>
+    
+    <p style="margin-top:24px;"><a href="tel:+16193248727" style="color:#94A3B8; text-decoration:none; font-size:1.1rem;">Or call us directly: <strong style="color:#D4952A;">(619) 324-8727</strong></a></p>
     <p style="color:#64748B; font-size:0.85rem; margin-top:8px;">We pick up. Seriously.</p>
   </div>
 </section>
+
+<script>
+// Show success message if redirected back after submission
+if(window.location.search.includes('submitted=true')){
+  var form=document.getElementById('contact-form');
+  var success=document.getElementById('form-success');
+  if(form)form.style.display='none';
+  if(success)success.style.display='block';
+  history.replaceState(null,'',window.location.pathname);
+}
+// Responsive: stack email/phone on mobile
+if(window.innerWidth<640){
+  var grid=document.querySelector('#contact-form-wrapper div[style*="grid-template-columns:1fr 1fr"]');
+  if(grid)grid.style.gridTemplateColumns='1fr';
+}
+</script>
 
 <!-- FOOTER -->
 <footer>
